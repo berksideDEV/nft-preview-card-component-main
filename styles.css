@@ -1,0 +1,180 @@
+/*/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*CUSTOM CSS*/
+:root{
+    --softblue: hsl(215, 51%, 70%);
+    --cyan:hsl(178, 100%, 50%);
+    --main-blue:hsl(217, 54%, 11%);
+    --card-blue:hsl(216, 50%, 16%);
+    --line:hsl(215, 32%, 27%);
+    --white:hsl(0, 0%, 100%);
+}
+html{
+    font-family: 'Fraunces', serif;
+    font-family: 'Orbitron', sans-serif;
+    font-size:18px;
+}
+body{
+    background: var(--main-blue);
+}
+main{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height:100vh;
+}
+.card{
+    width:350px;
+    height:min-content;
+    padding:1rem;
+    border-radius: 1rem;
+    border:1px solid var(--card-blue);
+    background: var(--card-blue);
+}
+.price-content>#price{
+    color: var(--cyan);
+}
+.card>h1,.card>p,.card>.price-content,.card>hr,.card-footer{
+    margin-top:1rem;
+}
+.card>h1{
+    font-size:18px;
+    padding-top:1rem;
+}
+.card>p,.price-content>#days,.card-footer>p{
+    color:var(--softblue);
+}
+.card>p>span,.card>h1,.card-footer>p>span{
+    color:var(--white);
+}
+.card>p,#price>p{
+    font-size:14px;
+}
+.card>#img{
+    background-image:url('./images/image-equilibrium.jpg');
+    border-radius: 1rem;
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    width:100%;
+    
+
+}
+.card>#img::after{
+    content:url('./images/icon-view.svg');
+    background:var(--cyan);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100%;
+    border-radius: 1rem;
+    opacity: 0;
+    transition: all 0.25 ease-in-out;
+    cursor: pointer;
+}
+.card>#img:hover::after{
+    opacity: .8;
+}
+.card>.price-content{
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:14px;
+}
+.price-content>#price,.price-content>#days{
+    margin-left:-6rem;
+}
+.card-footer{
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    font-size:14px;
+}
+.card-footer>p{
+    margin-left:0.5rem;
+}
+.card-footer>span>img{
+    border-radius: 50%;
+    border:1px solid var(--white);
+    width:1.5rem;
+    height:auto;
+}
+.card>h1:hover,.card-footer>p>span:hover{
+    color:var(--cyan);
+    cursor: pointer;
+}
+
